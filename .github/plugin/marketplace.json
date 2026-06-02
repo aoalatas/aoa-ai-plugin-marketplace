@@ -13,7 +13,10 @@
   "plugins": [
     {
       "name": "aoa-ai-security",
-      "source": "aoa-ai-security",
+      "source": {
+        "source": "github",
+        "repo": "aoalatas/aoa-ai-security"
+      },
       "displayName": "AOA Security Toolkit",
       "description": "Security review, dependency audit, and secret detection tools for AOA projects. Includes a security auditor agent, OWASP-based code review skill, and a PostToolUse hook that scans for hardcoded secrets.",
       "version": "1.0.0",
