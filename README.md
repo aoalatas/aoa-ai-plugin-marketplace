@@ -10,6 +10,7 @@ Add to your `settings.json` (`Ctrl+Shift+P` → *Open User Settings JSON*):
 
 ```json
 {
+  "chat.plugins.enabled": true,
   "chat.plugins.marketplaces": ["aoalatas/aoa-ai-plugin-marketplace"]
 }
 ```
@@ -41,7 +42,7 @@ VSCode will prompt team members to install recommended plugins the first time th
 ### Option 3: Install Directly from Source
 
 1. `Ctrl+Shift+P` → *Chat: Install Plugin From Source*
-2. Enter: `https://github.com/aoalatas/aoa-ai-plugin-marketplace`
+2. Enter plugin repo URL (example): `https://github.com/aoalatas/aoa-ai-security`
 
 ---
 
@@ -58,7 +59,7 @@ Security review, dependency auditing, and automatic secret detection for every f
 | 🤖 Agent: `@security-auditor` | Read-only systematic security audit agent |
 | 🪝 Hook: PostToolUse | Auto-scans files for hardcoded secrets & dangerous patterns |
 
-[→ Plugin README](plugins/aoa-ai-security/README.md)
+[→ Plugin README](https://github.com/aoalatas/aoa-ai-security)
 
 ---
 
@@ -67,37 +68,25 @@ Security review, dependency auditing, and automatic secret detection for every f
 VSCode checks for plugin updates every 24 hours (or run **Extensions: Check for Extension Updates**).
 
 **To publish a plugin update:**
-1. Make changes in the plugin directory
-2. Bump `version` in `plugins/<plugin-name>/.claude-plugin/plugin.json`
-3. Push to `main` — all team members' VSCode instances update automatically
+1. Publish changes in the plugin repository (for example `aoalatas/aoa-ai-security`)
+2. Bump plugin `version` in that plugin repo's manifest(s)
+3. Update `version` for that plugin in `.github/plugin/marketplace.json`
+4. Push to `main` — VS Code will discover updates during plugin refresh
 
 ---
 
 ## 🏗️ Adding a New Plugin
-
-```
-plugins/
-  your-new-plugin/
-    .claude-plugin/
-      plugin.json          # Plugin manifest
-    skills/
-      your-skill/
-        SKILL.md           # Skill instructions
-    agents/
-      your-agent.agent.md  # Custom agent
-    hooks/
-      hooks.json           # Hook configuration
-    scripts/
+In `.github/plugin/marketplace.json`, add an entry under `plugins`:
       hook-script.js       # Hook scripts (Node.js = cross-platform)
-    README.md
-```
 
 Then add it to `.github/plugin/marketplace.json`:
-
-```json
-{
   "name": "your-new-plugin",
-  "source": "your-new-plugin",
+  "description": "...",
+  "version": "1.0.0",
+  "source": {
+    "source": "github",
+    "repo": "your-org/your-plugin-repo"
+  }
   "displayName": "Your Plugin Name",
   "description": "...",
   "version": "1.0.0"
