@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "aoa-ai-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "aoalatas/aoa-ai-plugin-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "aoa-ai-security@aoa-ai-plugins": true
+  }
+}

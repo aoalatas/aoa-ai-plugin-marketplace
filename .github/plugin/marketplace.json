@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/github/awesome-copilot/main/.schemas/marketplace.schema.json",
+  "name": "aoa-ai-plugins",
+  "metadata": {
+    "description": "AOA AI Plugin Marketplace — team-wide developer tools, agents, skills and hooks",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "owner": {
+    "name": "AOA Team",
+    "email": "aoalatas@github.com"
+  },
+  "plugins": [
+    {
+      "name": "aoa-ai-security",
+      "source": {
+        "source": "github",
+        "repo": "aoalatas/aoa-ai-security"
+      },
+      "displayName": "AOA Security Toolkit",
+      "description": "Security review, dependency audit, and secret detection tools for AOA projects. Includes a security auditor agent, OWASP-based code review skill, and a PostToolUse hook that scans for hardcoded secrets.",
+      "version": "1.1.0",
+      "author": {
+        "name": "AOA Team"
+      },
+      "keywords": [
+        "security",
+        "owasp",
+        "secret-detection",
+        "dependency-audit",
+        "code-review"
+      ],
+      "category": "Security",
+      "homepage": "https://github.com/aoalatas/aoa-ai-plugin-marketplace"
+    }
+  ]
+}
