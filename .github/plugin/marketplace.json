@@ -27,7 +27,8 @@
       ],
       "source": {
         "source": "github",
-        "repo": "aoalatas/aoa-ai-security"
+        "repo": "aoalatas/aoa-ai-security",
+        "path": ".github/plugin"
       }
     }
   ]
